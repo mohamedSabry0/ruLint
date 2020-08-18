@@ -34,7 +34,7 @@ class Parser
             { count: 1, line: index }
           end
       elsif !(line =~ /^\s*class/).nil?
-        name = line[/class .+[^;]/][6...-1]
+        name = line[/[^(class )]\w+/]
         @names[:classes][name] = { name: name, line: index }
         p name
       end
