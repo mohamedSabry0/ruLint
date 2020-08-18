@@ -1,21 +1,21 @@
-
 class Parser
   def initialize(file)
     @file = File.open(file)
     @file_path = file
     @names = {
-        variables:{},
-        classes:{},
-        modules:{}
+      variables: {},
+      classes: {},
+      modules: {}
     }
     line_parser
     extract_names
   end
+
   def line_parser
-    #check for method file line extractor
-    @lines = Array.new
+    # check for method file line extractor
+    @lines = []
     @file.each do |line|
-        @lines.push(line)
+      @lines.push(line)
     end
     @lines
   end
@@ -23,19 +23,20 @@ class Parser
   def extract_names
     @lines.each_with_index do |line, index|
       matched = line =~ /[^"']=/
-      if (line =~ /[^"']=/) != nil
-        variable = line[0...matched].split(',').strip #TODO trim white spaces 
-        # TODO is enumerable then .each for the array
-        @names[:variables][variable] = if @names[:variables].has_key(variable)
-                                @names[:variables][variable][:count] + 1
-                              else
-                                #TODO if /[+-/*]=/ use before decl
-                                {count: 1, line: index}
-                              end
-      elsif (line =~ /^\s*class/) != nil
-        matched = 5 + (line =~ /class/)
-        name = line[/class .+(;|\n)/][6...-1]
-        @names[:classes][name] = {name: name, line: index}
+      if !(line =~ /[^"']=/).nil?
+        variable = line[0...matched].split(',').strip # TODO: trim white spaces
+        # TODO: is enumerable then .each for the array
+        @names[:variables][variable] =
+          if @names[:variables].has_key(variable)
+            @names[:variables][variable][:count] + 1
+          else
+            # TODO: if /[+-/*]=/ use before declaration
+            { count: 1, line: index }
+          end
+      elsif !(line =~ /^\s*class/).nil?
+        name = line[/class .+[^;]/][6...-1]
+        @names[:classes][name] = { name: name, line: index }
+        p name
       end
     end
   end
