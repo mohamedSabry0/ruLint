@@ -3,8 +3,8 @@ class Parser
   def initialize(file)
     @file = File.open(file)
     @names = {
-        variables:{}
-        classes:{}
+        variables:{},
+        classes:{},
         modules:{}
     }
     line_parser
@@ -24,17 +24,20 @@ class Parser
       matched = line =~ /[^"']=/
       #class /^\s*class/
       #module /^\s*module/
-      if (line =~ /[^"']=/) > 0
+      if (line =~ /[^"']=/) != nil
         variable = line[0...matched].split(',') #TODO trim white spaces 
         # TODO is enumerable then .each for the array
-        @variables[variable] = if @variables.has_key(variable)
-                                @variables[variable][:count] + 1
+        @names[:variables][variable] = if @names[:variables].has_key(variable)
+                                @names[:variables][variable][:count] + 1
                               else
                                 #TODO if /[+-/*]=/ use before decl
-                                {count: 1, line:index}
+                                {count: 1, line: index}
                               end
-      elsif (line =~ /^\s*class/) > 0
-        matched = 4 + (line =~ /class/)
+      elsif (line =~ /^\s*class/) != nil
+        matched = 5 + (line =~ /class/)
+        name = line[/class .+(;|\n)/][6...-1]
+        @names[:classes][name] = {count: 1, line: index}
+        
       end
     end
   end
