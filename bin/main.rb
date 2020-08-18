@@ -1,5 +1,4 @@
 #reading file
-require_relative '../lib/parser.rb'
-parser = Parser.new('./example.rb')
-#parsing file line by line
-#process each line for name errors 
+require_relative '../lib/naming.rb'
+names = Naming.new('./example.rb')
+puts names.validate_classes

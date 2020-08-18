@@ -1,11 +1,8 @@
 class bad_example
 end
-
-class BadExample
+class Bad_Example; end
+class GoodExample
 end
-
 class BADNAME
 end
-
-class badname
-end
+class badname; end
