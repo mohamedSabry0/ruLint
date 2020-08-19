@@ -3,8 +3,9 @@ simple ruby linter with basic functionalities that will look only
 for naming conventions for variables, classes and modules
 
 <div align="center">
+
 [![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/mohamedSabry0/ruLint)
-[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/mohamedSabry0/ruLint/issues)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/umohamedSabry0/ruLint/issues)
 [![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/mohamedSabry0/ruLint/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 </div>
