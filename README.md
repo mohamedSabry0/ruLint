@@ -65,8 +65,8 @@ class GoodName; end
 
 ### Example Output
 ```
-naming_warning @(./example.rb, line#1):'bad_example' is not a good class name. Follow CamelCase naming convention
-naming_warning @(./example.rb, line#8):'badname' is not a good class name. Follow CamelCase naming convention
+naming_warning @(./example.rb, line#2):'bad_example' is not a good class name. Follow CamelCase naming convention
+naming_warning @(./example.rb, line#14):'badname' is not a good class name. Follow CamelCase naming convention
 ```
 
 ## Built With
