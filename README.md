@@ -37,13 +37,17 @@ bin/ruLint
 ```
  /usr/local/bin/ 
 ```
-you can run this in your terminal
+you can run this in your terminal on project directory
 ```
-ln -s path_to_project/bin/ruLint /usr/local/bin/
+ln -s $PWD/bin/ruLint /usr/local/bin/
 ```
 then from your terminal on a given ruby files directory you can run:
 ```
 ruLint
+```
+or
+```
+ruLint file1 file2
 ```
 
 ### Example Input File
