@@ -3,13 +3,11 @@ module NamingConventions
     file.each_with_index do |line, index|
       matched = line =~ /[^"']=/
       if !(line =~ /[^"']=/).nil?
-        variable = line[0...matched].split(',') # TODO: trim white spaces
-        # TODO: is enumerable then .each for the array
+        variable = line[0...matched].split(',')
         @names[:variables][variable] =
           if @names[:variables].key?(variable)
             @names[:variables][variable][:count] + 1
           else
-            # TODO: if /[+-/*]=/ use before declaration
             { count: 1, line: index }
           end
       elsif !(line =~ /^\s*class/).nil?

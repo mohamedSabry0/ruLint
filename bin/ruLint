@@ -1,18 +1,23 @@
 #!/usr/bin/env ruby
 
-# reading file
-
 require_relative '../lib/parser.rb'
-if ARGV.size > 0
-  ARGV.each do |filename|
+def handle_directories(dir)
+  Dir.glob("#{dir}/**/*.rb") do |filename|
     parser = Parser.new(filename)
     names = parser.extract_names
     puts parser.validate_classes(names)
+  end
+end
+if ARGV.size.positive?
+  ARGV.each do |filename|
+    if File.directory?(filename)
+      handle_directories(filename)
+    else
+    parser = Parser.new(filename)
+    names = parser.extract_names
+    puts parser.validate_classes(names)
+    end
   end
 else
-  Dir.glob('**/*.rb') do |filename|
-    parser = Parser.new(filename)
-    names = parser.extract_names
-    puts parser.validate_classes(names)
-  end
+  handle_directories('.')
 end
