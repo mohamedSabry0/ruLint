@@ -1,15 +1,17 @@
 require_relative 'naming_conventions.rb'
 class Parser
-  attr_reader :names
+  attr_reader :names, :file
   include NamingConventions
-  def initialize(file)
-    @file = File.open(file)
-    @file_path = file
+  def initialize
     @names = {
       variables: {},
       classes: {},
       modules: {}
     }
-    extract_names
+  end
+
+  def parse(file)
+    @file_path = file
+    @file = File.open(file, "r")
   end
 end

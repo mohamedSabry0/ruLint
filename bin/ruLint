@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
 # reading file
+
 require_relative '../lib/parser.rb'
-lines = Parser.new('./example.rb')
+parser = Parser.new
+Dir.glob("**/*.rb") do |filename|
+    file = parser.parse(filename)
+    names = parser.extract_names
+    puts parser.validate_classes(names)
+end
+
 # TODO: read multiple files
-puts lines.validate_classes(lines.names)
+
