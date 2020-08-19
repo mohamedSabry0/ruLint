@@ -9,6 +9,10 @@ for naming conventions for variables, classes and modules
 
 ## Getting Started
 
+### Live Demo
+- [Demo](https://repl.it/@mohammadSabri/ruLint)
+- navigate to the pull request's branch from version control tab "feature/logic"
+
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -29,7 +33,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Use Instruction
 #### using the example
-- copy the code example provided below in Example file input section and add it to a new ruby file in a directory
+- copy the code example provided below in [Example Input File section](#example-input-file) and add it to a new ruby file in a directory
 - in terminal `cd` to that `dir` then apply the following steps:
 - run `bin/ruLint` command
 **or**

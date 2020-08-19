@@ -13,9 +13,9 @@ if ARGV.size.positive?
     if File.directory?(filename)
       handle_directories(filename)
     else
-    parser = Parser.new(filename)
-    names = parser.extract_names
-    puts parser.validate_classes(names)
+      parser = Parser.new(filename)
+      names = parser.extract_names
+      puts parser.validate_classes(names)
     end
   end
 else
