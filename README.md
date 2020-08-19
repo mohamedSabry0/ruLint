@@ -2,13 +2,49 @@
 simple ruby linter with basic functionalities that will look only
 for naming conventions for variables, classes and modules
 
-<div align="center">
-
 [![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/mohamedSabry0/ruLint)
 [![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/umohamedSabry0/ruLint/issues)
 [![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/mohamedSabry0/ruLint/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-</div>
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- Text Editor (VSCode is suggested.)
+- [Ruby](https://ruby-doc.org/downloads/)
+
+### Setup
+
+- Install [git](https://git-scm.com/downloads)
+- Open Terminal
+- Change directory to folder to download repository
+- Use `cd <file-path>`
+- Run `git clone https://github.com/mohamedSabry0/ruLint.git`
+- Install [Ruby](https://ruby-doc.org/downloads/)
+- Run `ruby main.rb`
+
+### Use Instruction
+#### Basic use
+- from the project directory run this command in your terminal
+```
+bin/ruLint
+```
+#### a bit shorter running command
+- if you have the following directory in your PATH 
+```
+ /usr/local/bin/ 
+```
+you can run this in your terminal
+```
+ln -s path_to_project/bin/ruLint /usr/local/bin/
+```
+then from your terminal on a given ruby files directory you can run:
+```
+ruLint
+```
 
 ### Example Input File
 ```
@@ -35,25 +71,6 @@ naming_warning @(./example.rb, line#8):'badname' is not a good class name. Follo
 ## Built With
 
 - Ruby
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-- Text Editor (VSCode is suggested.)
-- [Ruby](https://ruby-doc.org/downloads/)
-
-### Setup
-
-- Install [git](https://git-scm.com/downloads)
-- Open Terminal
-- Change directory to folder to download repository
-- Use `cd <file-path>`
-- Run `git clone https://github.com/mohamedSabry0/ruLint.git`
-- Install [Ruby](https://ruby-doc.org/downloads/)
-- Run `ruby main.rb`
 
 ### Author
 

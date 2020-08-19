@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # reading file
 require_relative '../lib/parser.rb'
 lines = Parser.new('./example.rb')
