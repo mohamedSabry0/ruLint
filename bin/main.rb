@@ -1,5 +1,5 @@
 # reading file
-require_relative '../lib/naming.rb'
-names = Naming.new('./example.rb')
+require_relative '../lib/parser.rb'
+lines = Parser.new('./example.rb')
 # TODO: read multiple files
-puts names.validate_classes
+puts lines.validate_classes(lines.names)

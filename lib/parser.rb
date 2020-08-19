@@ -1,4 +1,7 @@
+require_relative 'naming.rb'
 class Parser
+  attr_accessor :names
+  include Naming
   def initialize(file)
     @file = File.open(file)
     @file_path = file
@@ -9,6 +12,7 @@ class Parser
     }
     line_parser
     extract_names
+
   end
 
   def line_parser
@@ -17,11 +21,11 @@ class Parser
     @file.each do |line|
       @lines.push(line)
     end
-    @lines
+    p @lines
   end
 
   def extract_names
-    @lines.each_with_index do |line, index|
+    @file.each_with_index do |line, index|
       matched = line =~ /[^"']=/
       if !(line =~ /[^"']=/).nil?
         variable = line[0...matched].split(',').strip # TODO: trim white spaces
@@ -36,6 +40,7 @@ class Parser
       elsif !(line =~ /^\s*class/).nil?
         name = line[/[^(class )]\w+/]
         @names[:classes][name] = { name: name, line: index }
+        p name
       end
     end
   end
