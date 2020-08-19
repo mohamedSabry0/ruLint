@@ -1,4 +1,3 @@
-
 module NamingConventions
   def extract_names
     file.each_with_index do |line, index|
@@ -7,7 +6,7 @@ module NamingConventions
         variable = line[0...matched].split(',') # TODO: trim white spaces
         # TODO: is enumerable then .each for the array
         @names[:variables][variable] =
-          if @names[:variables].has_key?(variable)
+          if @names[:variables].key?(variable)
             @names[:variables][variable][:count] + 1
           else
             # TODO: if /[+-/*]=/ use before declaration
@@ -25,7 +24,7 @@ module NamingConventions
     class_warnings = []
     names[:classes].each do |_key, value|
       if (value[:name] =~ /([A-Z][a-z]*)+/).nil?
-        class_warnings.push("naming_warning @(#{@file_path}, line##{value[:line]+1}):" \
+        class_warnings.push("naming_warning @(#{@file_path}, line##{value[:line] + 1}):" \
          "'#{value[:name]}' is not a good class name. Follow CamelCase naming convention\n")
       end
     end

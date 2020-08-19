@@ -3,12 +3,10 @@
 # reading file
 
 require_relative '../lib/parser.rb'
-parser = Parser.new
-Dir.glob("**/*.rb") do |filename|
-    file = parser.parse(filename)
-    names = parser.extract_names
-    puts parser.validate_classes(names)
+
+Dir.glob('**/*.rb') do |filename|
+  parser = Parser.new
+  parser.parse(filename)
+  names = parser.extract_names
+  puts parser.validate_classes(names)
 end
-
-# TODO: read multiple files
-

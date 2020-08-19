@@ -12,6 +12,6 @@ class Parser
 
   def parse(file)
     @file_path = file
-    @file = File.open(file, "r")
+    @file = File.open(file, 'r')
   end
 end
