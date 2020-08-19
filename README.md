@@ -24,35 +24,29 @@ To get a local copy up and running follow these simple example steps.
 - Use `cd <file-path>`
 - Run `git clone https://github.com/mohamedSabry0/ruLint.git`
 - Install [Ruby](https://ruby-doc.org/downloads/)
-- Run `ruby main.rb`
+- `cd ruLint`
+
 
 ### Use Instruction
-#### Basic use
-- from the project directory run this command in your terminal
-```
-bin/ruLint
-```
+#### using the example
+- copy the code example provided below in Example file input section and add it to a new ruby file in a directory
+- in terminal `cd` to that `dir` then apply the following steps:
+- run `bin/ruLint` command
+**or**
+- give it file paths as arguments to run on specific ones e.g:
+`bin/ruLint file1 dir/file2.rb`
+
 #### a bit shorter running command
 - if you have the following directory in your PATH 
-```
- /usr/local/bin/ 
-```
-you can run this in your terminal on project directory
-```
-ln -s $PWD/bin/ruLint /usr/local/bin/
-```
-then from your terminal on a given ruby files directory you can run:
-```
-ruLint
-```
-or
-```
-ruLint file1 file2
-```
+`/usr/local/bin/`
+
+- you can run this in your terminal from the project directory
+`ln -s $PWD/bin/ruLint /usr/local/bin/`
+
+- then simply use command `ruLint` instead of `bin/ruLint`
 
 ### Example Input File
 ```
-# rubocop:disable Lint/Syntax
 class bad_example
 end
 class Bad_Example; end
@@ -63,7 +57,6 @@ end
 class badname; end
 class GoodName; end
 
-# rubocop:enable Lint/Syntax
 ```
 
 ### Example Output
