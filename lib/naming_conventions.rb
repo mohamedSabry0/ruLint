@@ -10,7 +10,7 @@ module NamingConventions
           else
             { count: 1, line: index }
           end
-      elsif !(line =~ /^\s*class/).nil?
+      elsif !(line =~ /^\s*class /).nil?
         name = line[/[^(\s*class )]\w+/]
         names[:classes][name] = { name: name, line: index }
       end
