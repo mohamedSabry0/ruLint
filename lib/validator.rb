@@ -31,6 +31,6 @@ class Validator
   end
 
   def validate_names
-    names_warnings = @module_warnings + @class_warnings
+    @module_warnings + @class_warnings
   end
 end
