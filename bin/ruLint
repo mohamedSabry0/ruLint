@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/parser.rb'
+require_relative '../lib/validator.rb'
 def handle_directories(dir)
   Dir.glob("#{dir}/**/*.rb") do |filename|
     parser = Parser.new(filename)
     names = parser.extract_names
-    puts parser.validate_classes(names)
-    puts parser.validate_modules(names)
+    validator = Validator.new(names, filename)
+    puts validator.validate_names
   end
 end
 if ARGV.size.positive?
