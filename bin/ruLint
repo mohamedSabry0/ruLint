@@ -17,7 +17,8 @@ if ARGV.size.positive?
     else
       parser = Parser.new(filename)
       names = parser.extract_names
-      puts parser.validate_classes(names)
+      validator = Validator.new(names, filename)
+      puts validator.validate_names
     end
   end
 else
