@@ -26,6 +26,7 @@ module NamingConventions
     end
     class_warnings
   end
+
   def validate_modules(names)
     module_warnings = []
     names[:modules].each do |_key, value|
