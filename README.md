@@ -9,6 +9,10 @@ for naming conventions for variables, classes and modules
 
 ## Getting Started
 
+### The Followed Style Guide
+- [Guide](https://rubystyle.guide/#camelcase-classes)
+- Please refer to this guide for any concerns about the followed rules for this linter
+
 ### Live Demo
 - [Demo](https://repl.it/@mohammadSabri/ruLint)
 - navigate to the pull request's branch from version control tab "feature/logic"
@@ -29,6 +33,11 @@ To get a local copy up and running follow these simple example steps.
 - Run `git clone https://github.com/mohamedSabry0/ruLint.git`
 - Install [Ruby](https://ruby-doc.org/downloads/)
 - `cd ruLint`
+
+#### Testing
+- Install `gem install rspec`
+- Initialize `rspec --init`
+- Run `rspec`
 
 
 ### Use Instruction
@@ -53,20 +62,43 @@ To get a local copy up and running follow these simple example steps.
 ```
 class bad_example
 end
-class Bad_Example; end
+
+class bad; end
+
+class Bad_Example
+end
+
 class GoodExample
+    var = 1
+    sec += 1
 end
-class BADNAME
+
+class Mu_Foo; end
+
+class BADNAME #passed rubocop because abbreviations like HTML should pass
 end
+
 class badname; end
 class GoodName; end
-
 ```
 
 ### Example Output
 ```
-naming_warning @(./example.rb, line#2):'bad_example' is not a good class name. Follow CamelCase naming convention
-naming_warning @(./example.rb, line#14):'badname' is not a good class name. Follow CamelCase naming convention
+naming_warning @(example.rb, line#2):
+'bad_example' is not a good class name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#5):
+'bad' is not a good class name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#7):
+'Bad_Example' is not a good class name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#15):
+'Mu_Foo' is not a good class name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#20):
+'badname' is not a good class name. Follow CamelCase naming convention
+
 ```
 
 ## Built With

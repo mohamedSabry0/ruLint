@@ -1,5 +1,4 @@
 class Validator
-  attr_accessor :class_warnings, :module_warnings
   attr_reader :names, :file_path
   def initialize(names, file_path)
     @names = names
