@@ -2,7 +2,7 @@
 
 require_relative '../lib/parser.rb'
 require_relative '../lib/validator.rb'
-# TODO method for 8-11
+# TODO: method for 8-11
 def handle_directories(dir)
   Dir.glob("#{dir}/**/*.rb") do |filename|
     parser = Parser.new(filename)

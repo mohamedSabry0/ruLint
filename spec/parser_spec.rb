@@ -10,3 +10,4 @@ describe Parser do
       expect(parser.file).to be_kind_of(File)
     end
   end
+end
