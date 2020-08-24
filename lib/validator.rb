@@ -1,35 +1,21 @@
 class Validator
-  attr_reader :names, :file_path
+  attr_reader :file_path
+  attr_accessor :validate_names
   def initialize(names, file_path)
-    @names = names
     @file_path = file_path
-    validate_classes(names)
-    validate_modules(names)
+    @validate_names = []
+    warnings(names[:classes])
+    warnings(names[:modules])
   end
 
-  def validate_classes(names)
-    @class_warnings = []
-    names[:classes].each do |_key, value|
+  def warnings(examples)
+    names_warnings = []
+    examples.each do |_key, value|
       if (value[:name] =~ /^([A-Z][a-z]*)+$/).nil?
-        @class_warnings.push("naming_warning @(#{file_path}, line##{value[:line] + 1}):" \
-         "\n'#{value[:name]}' is not a good class name. Follow CamelCase naming convention\n\n")
+        names_warnings.push("naming_warning @(#{file_path}, line##{value[:line] + 1}):" \
+         "\n'#{value[:name]}' is not a good class/module name. Follow CamelCase naming convention\n\n")
       end
     end
-    @class_warnings
-  end
-
-  def validate_modules(names)
-    @module_warnings = []
-    names[:modules].each do |_key, value|
-      if (value[:name] =~ /^([A-Z][a-z]*)+$/).nil?
-        @class_warnings.push("naming_warning @(#{file_path}, line##{value[:line] + 1}):" \
-         "\n'#{value[:name]}' is not a good module name. Follow CamelCase naming convention\n\n")
-      end
-    end
-    @module_warnings
-  end
-
-  def validate_names
-    @module_warnings + @class_warnings
+    @validate_names += names_warnings
   end
 end
