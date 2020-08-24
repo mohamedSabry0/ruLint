@@ -6,8 +6,6 @@ module NamingConventions
         matched = line =~ /[^"']=/
         VariablesHandling.extract_variables(line, names, matched, index)
       elsif line =~ /^\s*class /
-        # could be used without bang and nil?
-        # changing name to classes and modules for confusion
         classes = line[/[^(\s*class )]\w+/]
         names[:classes][classes] = { name: classes, line: index }
       elsif line =~ /^\s*module /
