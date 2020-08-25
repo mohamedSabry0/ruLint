@@ -1,7 +1,6 @@
 require_relative 'naming_conventions.rb'
 class Parser
   attr_reader :file_path, :file
-  attr_accessor :names
   include NamingConventions
   def initialize(file)
     @names = {
