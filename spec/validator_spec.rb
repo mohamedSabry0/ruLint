@@ -4,7 +4,7 @@ describe Validator do
   let(:names) { Parser.new('example.rb').extract_names }
   let(:validator) { Validator.new(names, 'example.rb') }
   let(:warning_messages) do
-    [['naming_warning @(./example.rb,line#2):'\
+    [['naming_warning @(example.rb,line#2):'\
       "\n'bad_example' is not a good class/module name. Follow CamelCase naming convention\n\n"]]
   end
   describe '#warnings' do
