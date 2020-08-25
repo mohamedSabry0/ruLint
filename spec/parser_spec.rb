@@ -10,4 +10,12 @@ describe Parser do
       expect(parser.file).to be_kind_of(File)
     end
   end
+  describe '#extract_names' do
+    it 'should be called on a parser object' do
+      expect(parser.extract_names).to
+    end
+  end
+  describe '#variables_handling' do
+    
+  end
 end
