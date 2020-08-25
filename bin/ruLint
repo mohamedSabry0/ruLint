@@ -3,10 +3,8 @@
 require_relative '../lib/parser.rb'
 require_relative '../lib/validator.rb'
 def file_handler(file)
-  parser = Parser.new(file)
-  names = parser.extract_names
-  validator = Validator.new(names, file)
-  puts validator.validate_names
+  names = Parser.new(file).extract_names
+  puts Validator.new(names, file).validate_names
 end
 
 def handle_directories(dir)
