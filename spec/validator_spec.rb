@@ -13,16 +13,6 @@ describe Validator do
       "naming_warning @(./example.rb, line#15):"\
       "\n'Mu_Foo' is not a good class/module name. Follow CamelCase naming convention\n\n",
       "naming_warning @(./example.rb, line#20):"\
-      "\n'badname' is not a good class/module name. Follow CamelCase naming convention\n\n",
-      "naming_warning @(./example.rb, line#23):"\
-      "\n'bad_example' is not a good class/module name. Follow CamelCase naming convention\n\n",
-      "naming_warning @(./example.rb, line#26):"\
-      "\n'bad' is not a good class/module name. Follow CamelCase naming convention\n\n",
-      "naming_warning @(./example.rb, line#28):"\
-      "\n'Bad_Example' is not a good class/module name. Follow CamelCase naming convention\n\n",
-      "naming_warning @(./example.rb, line#36):"\
-      "\n'Mu_Foo' is not a good class/module name. Follow CamelCase naming convention\n\n",
-      "naming_warning @(./example.rb, line#41):"\
       "\n'badname' is not a good class/module name. Follow CamelCase naming convention\n\n"]]
   end
   describe '#warnings' do
