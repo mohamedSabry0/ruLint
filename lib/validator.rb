@@ -5,7 +5,7 @@ class Validator
     @file_path = file_path
     @validate_names = []
     warnings(names[:classes])
-    warnings(names[:modules])
+    # warnings(names[:modules])
   end
 
   def warnings(examples)
@@ -16,6 +16,6 @@ class Validator
          "\n'#{value[:name]}' is not a good class/module name. Follow CamelCase naming convention\n\n")
       end
     end
-    @validate_names += names_warnings
+    @validate_names.push(names_warnings) unless names_warnings.empty?
   end
 end

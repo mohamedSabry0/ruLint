@@ -42,6 +42,4 @@ describe Parser do
       expect(parser.extract_names.size).to eq(3)
     end
   end
-  describe '#variables_handling' do
-  end
 end
