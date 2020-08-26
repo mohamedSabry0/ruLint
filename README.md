@@ -64,6 +64,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Example Input File
 ```
+# rubocop:disable all
 class bad_example
 end
 
@@ -79,29 +80,67 @@ end
 
 class Mu_Foo; end
 
-class GOODNAME #passed rubocop because abbreviations like HTML should pass
+class BADNAME
 end
 
 class badname; end
 class GoodName; end
+
+module bad_example
+end
+
+module bad; end
+
+module Bad_Example
+end
+
+module GoodExample
+    var = 1
+    sec += 1
+end
+
+module Mu_Foo; end
+
+module BADNAME
+end
+
+module badname; end
+module GoodName; end
+
 ```
 
 ### Example Output
 ```
 naming_warning @(example.rb, line#2):
-'bad_example' is not a good class name. Follow CamelCase naming convention
+'bad_example' is not a good class/module name. Follow CamelCase naming convention
 
 naming_warning @(example.rb, line#5):
-'bad' is not a good class name. Follow CamelCase naming convention
+'bad' is not a good class/module name. Follow CamelCase naming convention
 
 naming_warning @(example.rb, line#7):
-'Bad_Example' is not a good class name. Follow CamelCase naming convention
+'Bad_Example' is not a good class/module name. Follow CamelCase naming convention
 
 naming_warning @(example.rb, line#15):
-'Mu_Foo' is not a good class name. Follow CamelCase naming convention
+'Mu_Foo' is not a good class/module name. Follow CamelCase naming convention
 
 naming_warning @(example.rb, line#20):
-'badname' is not a good class name. Follow CamelCase naming convention
+'badname' is not a good class/module name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#23):
+'bad_example' is not a good class/module name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#26):
+'bad' is not a good class/module name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#28):
+'Bad_Example' is not a good class/module name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#36):
+'Mu_Foo' is not a good class/module name. Follow CamelCase naming convention
+
+naming_warning @(example.rb, line#41):
+'badname' is not a good class/module name. Follow CamelCase naming convention
+
 
 ```
 
