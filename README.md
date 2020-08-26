@@ -75,7 +75,7 @@ end
 
 class Mu_Foo; end
 
-class BADNAME #passed rubocop because abbreviations like HTML should pass
+class GOODNAME #passed rubocop because abbreviations like HTML should pass
 end
 
 class badname; end
