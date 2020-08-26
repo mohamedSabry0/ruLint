@@ -5,7 +5,7 @@ class Validator
     @file_path = file_path
     @validate_names = []
     warnings(names[:classes])
-    # warnings(names[:modules])
+    warnings(names[:modules])
   end
 
   def warnings(examples)
