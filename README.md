@@ -15,7 +15,8 @@ for naming conventions for variables, classes and modules
 
 ### Live Demo
 - [Demo](https://repl.it/@mohammadSabri/ruLint)
-- navigate to the pull request's branch from version control tab "feature/logic"
+- to run online type `bin/ruLint` in the interactive shell
+- to run tests online type `rspec` in the interactive shell
 
 To get a local copy up and running follow these simple example steps.
 
