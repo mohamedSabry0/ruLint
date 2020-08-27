@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/parser.rb'
+require_relative '../lib/validator.rb'
+def file_handler(file)
+  names = Parser.new(file).extract_names
+  puts Validator.new(names, file).validate_names
+end
+
+def handle_directories(dir)
+  Dir.glob("#{dir}/**/*.rb") do |filename|
+    file_handler(filename)
+  end
+end
+
+if ARGV.size.positive?
+  ARGV.each do |filename|
+    if File.directory?(filename)
+      handle_directories(filename)
+    else
+      file_handler(filename)
+    end
+  end
+else
+  handle_directories('.')
+end
