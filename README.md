@@ -41,8 +41,12 @@ To get a local copy up and running follow these simple example steps.
 #### Testing
 - Install `gem install rspec`
 - Initialize `rspec --init`
+- create a new file on the project's root directory `touch example.rb`
+- copy all the code provided in  [Example Input File section](#example-input-file) and make sure to include all the lines
+- paste that code in the `example.rb` and save 
 - Run `rspec`
 
+**Note: without the mentioned file all the tests will fail**
 
 ### Use Instruction
 #### using the example
